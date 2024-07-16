@@ -58,3 +58,15 @@ switch (day) {
 // Task 6 : check odd or even
 let number = 1;
 number%2 == 0 ? console.log("Even Number") : console.log("Odd Number");
+
+// Activity 5 - Combining conditions
+// Task 7 : Check if a year is leap year
+// Note - A year is a leap year if “any one of ” the following conditions are satisfied: 
+// 1. The year is multiple of 400.
+// 2. The year is a multiple of 4 and not a multiple of 100.
+const year = 2002;
+if((year%400 == 0) || ((year%100 != 0) && (year%4==0))){
+    console.log("Leap Year");
+}else{
+    console.log("Not leap year");
+}
