@@ -62,12 +62,14 @@ for(i;i<=5;i++){
   }
   console.log(pattern);
 }
-// Output -
-// *
-// * *
-// * * *
-// * * * *
-// * * * * *
+// Output - 
+/*
+ *
+ * *
+ * * *
+ * * * *
+ * * * * *
+*/
 
 // Activity 5 - Loop Control Statements
 // Task 8 - Print 1 to 10 but skip 5 using continue
