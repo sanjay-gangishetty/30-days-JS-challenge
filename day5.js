@@ -77,4 +77,4 @@ function evenOrOdd(num) {
   }
   
   console.log(higherOrderFunc(square, product, 5));
-  
+5  
