@@ -1,0 +1,74 @@
+<!-- <!DOCTYPE html> -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOM Manipulation</title>
+    <style>
+        .img {
+            width: 100%;
+            display: block;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="heading">This is Heading H1</h1>
+    <h1 class="heading2">This is Heading 2</h1>
+    <ul>
+        <li>A</li>
+        <li>B</li>
+        <li>C</li>
+    </ul>
+    <img
+        src="https://images.ctfassets.net/hrltx12pl8hq/28ECAQiPJZ78hxatLTa7Ts/2f695d869736ae3b0de3e56ceaca3958/free-nature-images.jpg?fit=fill&w=1200&h=630" />
+    <p id="text-content">Hey, i am from text-content div</p>
+    <button onClick="changeContent()">Click to change the above text content</button>
+    <h1 onmouseover="mouseOver()" onmouseout="mouseOut()" id="mouse-over">Mouse Over</h1>
+    <script>
+        // Activity 1
+        document.getElementById("heading").textContent = "Manipulated Heading";
+        const h = document.querySelector(".heading2").style.backgroundColor = "red";
+        // Activity 2
+        const divElement = "<div><h3>This is an appended div</h3></div>";
+        document.body.innerHTML += divElement;
+        const node = document.createElement("li");
+        const textnode = document.createTextNode("D");
+        node.appendChild(textnode);
+        document.querySelector("ul").appendChild(node);
+        // Activity 3
+        const element = document.getElementById("heading");
+        element.remove();
+        let e = document.querySelector("ul");
+        let child = e.lastElementChild;
+        e.removeChild(child);
+        // Activity 4
+        const img = document.querySelector("img");
+        img.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoUEzLKGWhf-Oc2y46H9-0xSXITsgTQklZNQ&s";
+        img.classList.add("img");
+        img.classList.remove("img");
+        // Activity 5
+        function changeContent() {
+            let element = document.getElementById("text-content");
+            element.textContent = "Hey!!";
+        }
+        let eventElement = document.getElementById("mouse-over");
+        function mouseOver() {
+            eventElement.style.border = "2px solid red";
+            eventElement.style.backgroundColor = "blue";
+            eventElement.style.color = "white";
+            eventElement.style.textAlign = "center";
+        }
+        function mouseOut() {
+            eventElement.style.border = "none";
+            eventElement.style.backgroundColor = "";
+            eventElement.style.color = "black";
+            eventElement.style.textAlign = "left";
+        }
+    </script>
+</body>
+
+</html>
