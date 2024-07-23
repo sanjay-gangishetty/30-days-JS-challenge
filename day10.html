@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Event Handling</title>
+</head>
+
+<body>
+
+    <p id="para">Content is ....</p>
+    <button id="changer">Click me</button>
+    <br />
+    <img id=image src="" alt="Img text" />
+    <h1 id="heading">This is heading</h1>
+    <form method="POST" id="form">
+        <label>Type text</label>
+        <input id="inputBox" type="text" placeholder="Enter something" />
+        <button type="submit" id="sub-btn">Submit form</button>
+    </form>
+    <label for="cars">Choose a car:</label>
+
+    <select name="cars" id="cars">
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="mercedes">Mercedes</option>
+        <option value="audi">Audi</option>
+    </select>
+
+    <ul id="myList">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+    <button id="addItem">Add Item</button>
+
+    <script>
+        // Activity 1 - Basic Event Handling
+        var para = document.getElementById("para");
+        var btn = document.getElementById("changer");
+        btn.addEventListener("click", () => {
+            para.textContent = "Changed content";
+        });
+        var image = document.getElementById("image");
+        image.addEventListener("dblclick", () => {
+            image.style.display = "block";
+        });
+
+        // Activity 2 - Mouse Events
+        var heading = document.getElementById("heading");
+        heading.addEventListener("mouseover", () => {
+            heading.style.backgroundColor = "red";
+        });
+        heading.addEventListener("mouseout", () => {
+            heading.style.backgroundColor = "";
+        });
+
+        // Activity 3 - Keyboard Events
+        var input = document.getElementById("inputBox");
+        var val = "";
+        input.addEventListener("keydown", (e) => {
+            console.log("Pressed key : " + e.key);
+        });
+        input.addEventListener("keyup", (e) => {
+            val = val + e.key;
+            para.textContent = val;
+        });
+      
+        // Activity 4 - Form events
+        var form = document.getElementById("form");
+        form.addEventListener("submit", (e) => {
+            var formData = new FormData(form);
+            console.log(formData);
+            e.preventDefault();
+        });
+
+        var select = document.getElementById("cars");
+        select.addEventListener("change", () => {
+            para.textContent = select.value;
+        });
+
+        // Activity 5 - Event Delegation
+      /* Note - 
+      Event Delegation is basically a pattern to handle events efficiently. 
+      Instead of adding an event listener to each and every similar element, 
+      we can add an event listener to a parent element and call an event on a particular target using the .target property of the event object.
+      */
+        var list = document.getElementById("myList");
+        list.addEventListener("click", function (event) {
+            console.log(event.target.textContent);
+        });
+        var addItemButton = document.getElementById("addItem");
+        list.addEventListener("click", function (event) { });
+
+        function addListItem() {
+            var newItem = document.createElement("li");
+            var itemCount = list.getElementsByTagName("li").length + 1;
+            hild(newItem);
+        }
+        addItemButton.addEventListener("click", addListItem);
+    </script>
+</body>
+
+</html>
