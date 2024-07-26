@@ -1,5 +1,6 @@
 // Activity 2 - Named and Default exports
 // Task 3: Create a module that exports multiple functions using named exports. Import and use these functions in another script.
+// NOTE -   "type": "module" ---> Must Add this line inorder to `package.json` to import as below.
 import { add2, subtract, multiply, divide, modulo } from "./calcluate.js";
 console.log(add2(1, 2));
 console.log(subtract(1, 2));
