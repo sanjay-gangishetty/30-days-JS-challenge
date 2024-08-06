@@ -11,8 +11,9 @@ async function getMovieDetail(movieName) {
         console.log(e);
         const err = document.getElementById('err-cont');
         err.style.display = 'block';
-        err.innerHTML = e.message;
-        throw new Error('City not found');
+        const errText = document.getElementById('err');
+        errText.innerHTML = e.message;
+        throw new Error('No Movie found!!!');
     }
 };
 
@@ -33,8 +34,9 @@ sbtBtn.addEventListener('click', async (e) => {
         console.log(e);
         const err = document.getElementById('err-cont');
         err.style.display = 'block';
-        err.innerHTML = e.message;
-        throw new Error('City not found');
+        const errText = document.getElementById('err');
+        errText.innerHTML = e.message;
+        throw new Error('No Movie found!!!');
     }
 });
 
@@ -59,8 +61,9 @@ moreDetailBtn.addEventListener('click', async (e) => {
         console.log(e);
         const err = document.getElementById('err-cont');
         err.style.display = 'block';
-        err.innerHTML = e.message;
-        throw new Error('City not found');
+        const errText = document.getElementById('err');
+        errText.innerHTML = e.message;
+        throw new Error('No Movie found!!!');
     }
 })
 
@@ -76,7 +79,8 @@ async function getMoreDetail(title) {
         console.log(e);
         const err = document.getElementById('err-cont');
         err.style.display = 'block';
-        err.innerHTML = e.message;
-        throw new Error('City not found');
+        const errText = document.getElementById('err');
+        errText.innerHTML = e.message;
+        throw new Error('No Movie found!!!');
     }
 }
