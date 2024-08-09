@@ -142,6 +142,7 @@ function showForm() {
 }
 
 function showSuccessSection() {
+    errBlock.style.display = 'none';
     let name = document.getElementById('name');
     let email = document.getElementById('email');
     let address = document.getElementById('address');
@@ -165,7 +166,6 @@ function showSuccessSection() {
     address.value = '';
     phone.value = '';
     errBlock.style.display = 'none';
-    return;
 }
 
 function increaseQuantity(productId) {
