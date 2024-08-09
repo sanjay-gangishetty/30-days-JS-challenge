@@ -1,0 +1,47 @@
+/* Basic styles for the product cards */
+.product-card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+}
+
+.product-card .card-body {
+    padding: 10px;
+}
+
+.product-card .card-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.product-card .card-text {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.product-card .btn {
+    background-color: #28a745;
+    color: white;
+}
+
+/* Style the shopping cart section */
+.cart-section {
+    border-top: 2px solid #ddd;
+    padding-top: 20px;
+    margin-top: 20px;
+}
+
+.cart-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
