@@ -1,0 +1,45 @@
+.currentUserPost {
+    background-color: aliceblue;
+}
+
+/* Smooth hover effect on post cards */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Like and Comment buttons animations */
+.card-body a {
+    color: #555;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.card-body a:hover {
+    color: #007bff;
+    transform: scale(1.1);
+}
+
+/* Fade-in effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container {
+    animation: fadeIn 0.5s ease;
+}
+
+.alert {
+    animation: fadeIn 0.5s ease;
+}
